@@ -204,7 +204,7 @@ func TestDoContextCancellationSlowServer(t *testing.T) {
 		t.Errorf("expected no body due to cancellation, got: %q", string(body))
 	}
 	if elapsed > 500*time.Millisecond {
-		t.Errorf("Do did not return promptly on cancellation: took %v", elapsed)
+		t.Errorf("client.Do did not return promptly on cancellation: took %v", elapsed)
 	}
 
 	if resp != nil && resp.Body != nil {
